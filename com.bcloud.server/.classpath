@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/jso-full.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.5-bin.jar"/>
+	<classpathentry kind="lib" path="lib/twitter4j-1.1.0.jar" sourcepath="/Users/mki/DevelopmentResources/twitter4j-1.1.0/twitter4j-1.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-8.3-604.jdbc3.jar"/>
+	<classpathentry kind="lib" path="lib/com.buddycloud.geonames.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

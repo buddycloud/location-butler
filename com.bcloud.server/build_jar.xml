@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="jar" name="com.bcloud.server">
+	<property name="jar.dir" value="deploy" />
+	<property name="classes.dir" value="bin" />
+	<!--tstamp>
+		<format property="timestamp" pattern="yyyyMMdd_hhmm" locale="en,UK" />
+	</tstamp-->
+	<target name="jar">
+		<mkdir dir="${jar.dir}" />
+		<jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+		</jar>
+	</target>
+</project>

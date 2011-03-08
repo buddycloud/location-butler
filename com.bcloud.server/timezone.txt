@@ -1,0 +1,46 @@
+Configuration of servers, Postgres, Java, and databases to ensure proper use of time zones.
+
+
+Configuration
+
+1 Server
+- please always set to UTC time (system variable "TZ"?)
+
+2 Postgres
+- make sure postgresql.conf (usually in sub-directory /data) contains the entry 'timezone = UTC' (or timezone = 'UTC')
+- if configuration allows to supply runtime arguments to postgres server at all, add "-c timezone='UTC'" to start command like so: "postgres -c timezone='UTC'"
+- the two procedures are redundant, the second one even safer than the first one
+
+3 Java
+- if any time-related functionality or database access is used at all, always start the JVM with option '-Duser.timezone="UTC"' like so: 'java -Duser.timezone="UTC"'
+- don't use calender objects explicitly to specify the timezone of timestamp values; this is redundant and may introduce further errors
+
+4 Databases
+- always use the "Timestamp without Time Zone" type; this is the default since postgres 8.1 (we are using 8.3 presently) and also recommended by the Postgres team; thus the preferred way is to just use 'Timestamp' as the timestamp type
+- for default column values always use function Localtimestamp like so:
+	...
+	created   Timestamp DEFAULT Localtimestamp,
+	...
+  (function current_timestamp, or now, returns a timestamp with time zone; this is removed during conversion into a timestamp without timezone, thus, for UTC, will deliver equivalent results; however, it's preferred to avoid the conversion)
+- in client tools such as the command line tool or pgadmin3, use the command line option timezone to set the timezone explicitly and thus avoid confusion like so: 'SET timezone = UTC'
+
+
+Background
+
+General
+- there are no universally correct definitions of time zones, and time zones may change locally at any time
+- thus, there are just some generally agreed upon sources that gather time zone information
+- systems such as OSs, Postgres, or Java hence rely on one or another of these sources to guesstimate the current time zone based on the time of the year
+- this is imperfect as the available sources are not guaranteed to be correct and copying the data over (e.g., to lib/tzmappings for Java) presents a further source of potential errors (e.g., the timezone "Europe/Munich" delivered different results for my test machine and cave, both of which were incorrect)
+- therefore, the use of UTC throughout a system is the only way to go
+
+Postgres
+- the use of now() or current_timestamp relies on the current setting for the time zone
+- the default lookup path for the time zone, if not specified in the configuration (see above), is:
+	1 TZ unix environment variable
+	2 c function call localtime()
+- if the time zone is set to anything but UTC, now() inserted into a timstamp column with/without time zone will be guaranteed to give different results
+	 
+Java
+- System.currentTimeMillis() always returns the same (UTC-based) value independent of the time zone defined on the system or through a JVM command line argument (tested on Mac OS 10.5 and cave including a comparison of the returned values)
+- Timestamps values, however, rely on the presently set time zone

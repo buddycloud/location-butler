@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE preferences SYSTEM 'http://java.sun.com/dtd/preferences.dtd'>
+
+<preferences EXTERNAL_XML_VERSION="1.0">
+	<root type="user">
+		<map />
+		<node name="com">
+			<map />
+			<node name="buddycloud">
+				<map />
+				<node name="channels">
+					<map />
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="maitred" />
+						</map>
+					</node>
+					<node name="xmpp">
+						<map>
+							<entry key="log_packets" value="true" />
+							<entry key="component_jid" value="maitred.buddycloud.com" />
+							<entry key="component_pass" value="buddycloud" />
+							<entry key="component_host" value="localhost" />
+							<entry key="component_port" value="27238" />
+						</map>
+					</node>
+				</node>
+				<node name="social">
+					<map />
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="butler" />
+						</map>
+					</node>
+					<node name="xmpp">
+						<map>
+							<entry key="log_packets" value="false" />
+							<entry key="component_jid" value="social.buddycloud.com" />
+							<entry key="component_pass" value="buddycloud" />
+							<entry key="component_host" value="localhost" />
+							<entry key="component_port" value="27236" />
+						</map>
+					</node>
+				</node>
+				<node name="credentials">
+					<map />
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="butler" />
+						</map>
+					</node>
+					<node name="xmpp">
+						<map>
+							<entry key="log_packets" value="false" />
+							<entry key="component_jid" value="communities.buddycloud.com" />
+							<entry key="component_pass" value="buddycloud" />
+							<entry key="component_host" value="localhost" />
+							<entry key="component_port" value="27236" />
+						</map>
+					</node>
+				</node>
+				<node name="logger">
+					<map />
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="butler" />
+						</map>
+					</node>
+					<node name="xmpp">
+						<map>
+	 						<entry key="log_packets" value="false" />
+							<entry key="component_jid" value="moodlogger.buddycloud.com" />
+							<entry key="component_pass" value="buddycloud" />
+							<entry key="component_host" value="localhost" />
+							<entry key="component_port" value="27239" />
+						</map>
+					</node>
+				</node>
+				<node name="location">
+					<map>
+						<entry key="cell_tower_position_service" value="com.buddycloud.thirdparty.services.GoogleGearsCellTowerPositionService" />
+						<entry key="geocoding_service"           value="com.buddycloud.thirdparty.services.GeonamesWebService" />
+						<!-- <entry key="reverse_geocoding_service"   value="com.buddycloud.thirdparty.services.GeonamesLocalService" /> -->
+						<!-- <entry key="reverse_geocoding_service"   value="com.buddycloud.thirdparty.services.GoogleMapsWebService" /> -->
+						<entry key="reverse_geocoding_service"   value="com.buddycloud.thirdparty.services.CloudMadeWebService" />
+					</map>
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="butler" />
+						</map>
+					</node>
+					<node name="xmpp">
+						<map>
+							<entry key="log_packets" value="false" />
+							<entry key="component_jid" value="butler.buddycloud.com" />
+							<entry key="component_pass" value="SecReT" />
+							<entry key="component_host" value="localhost" />
+							<entry key="component_port" value="27021" />
+							<entry key="welcome_message_format" value="Welcome to @%s, joining us from %s." />
+							<entry key="welcome_message_to_jid" value="welcome@channels.buddycloud.com" />
+							<entry key="welcome_message_from_jid" value="butler@butler.buddycloud.com" />
+							<entry key="first_time_on_the_road_help_message"
+								value="Buddycloud also lets your friends know when you are on the road (like now). This way they will know why you may be less responsive than normal. If you want to let them know where you are headed, you can specify your planned next place: Go to the 'Places' tab , click on 'Options' and select 'Set my next place'." />
+							<entry key="first_time_unnamed_place_help_message"
+								value="Buddycloud automatically lets your followers know in which country, region and city or town you are. If you want more accuracy you can 'bookmark' the places you like to hang out, using names that make sense to you, like 'Home', 'School', 'Office' or 'The Café'. To bookmark a place, go to the 'Places' tab and click on the 'Bookmark this place'." />
+							<entry key="first_query_help_message"
+								value="" />
+							<entry key="second_query_help_message"
+								value="" />
+							<entry key="third_query_help_message"
+								value="" />
+							<entry key="non_sharable_place_names" value="home, work, office, zuhause, casa, mi casa, my house, hjemme, hemma" />
+						</map>
+					</node>
+				</node>
+				<node name="nearby">
+					<map />
+					<node name="sql">
+						<map>
+							<entry key="database_type" value="postgresql" />
+							<entry key="database_host" value="localhost" />
+							<entry key="database_name" value="location" />
+							<entry key="database_pass" value="verysecret" />
+							<entry key="database_port" value="5432" />
+							<entry key="database_user" value="butler" />
+						</map>
+					</node>
+				</node>
+				<node name="thirdparty">
+					<map />
+					<node name="services">
+						<map>
+							<entry key="geonames_timeout_milliseconds" value="4000" />
+							<entry key="geonames_local_host" value="geonames.buddycloud.com" />
+							<entry key="geonames_local_port" value="27234" />
+						</map>
+					</node>
+				</node>
+			</node>
+		</node>
+	</root>
+</preferences>
