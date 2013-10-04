@@ -1,10 +1,12 @@
-=Create Place=
+Create Place
+============
 
-==Create new place (minimal stanza)==
+Create new place (minimal stanza)
+---------------------------------
 
 Client to server:
- 
-<syntaxhighlight lang="xml">
+
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#create'>
        <place>
@@ -13,12 +15,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#create'>
        <place>
@@ -29,14 +30,14 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-==Create new place (maximal stanza)==
+Create new place (maximal stanza)
+---------------------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#create'>
        <place>
@@ -56,12 +57,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#create'>
        <place>
@@ -83,16 +83,17 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-=Place Editing=
+Place Editing
+=============
 
-==Edit Place==
-
+Edit Place
+----------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#edit'>
        <place>              
@@ -105,12 +106,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#edit'>
        <place>
@@ -124,14 +124,14 @@ Server to client:
       </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-==Delete Place==
+Delete Place
+------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#delete'>
        <place>
@@ -139,21 +139,23 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com' />
-</syntaxhighlight>
+~~~~
 
-=Place Details=
-==Get place details==
+Place Details
+=============
+
+Get place details
+-----------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place'>
        <place>
@@ -161,12 +163,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place'>
        <place>
@@ -188,14 +189,14 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-==Get place details (selected fields)==
+Get place details (selected fields)
+-----------------------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place'>
        <options>
@@ -209,12 +210,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place'>
        <place>
@@ -225,16 +225,16 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-==Search for places==
+Search for places
+-----------------
 
 Search for places in bc and third-party databases
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#search'>
        <place>
@@ -245,12 +245,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#search'>
        <place>
@@ -288,16 +287,17 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
+Set Current
+-----------
 
-==Set Current==
-
-Check in to place / create placemark (will be used to re-locate user to place every time he returns)
+Check in to place / create placemark (will be used to re-locate user to
+place every time he returns)
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#current'>
        <place>
@@ -305,12 +305,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#current'>
        <place>
@@ -318,20 +317,24 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server publishes place details to user's geoloc node
 
 ...
-=Going Places=
-==Set Next==
 
-==Set next place by id==
+Going Places
+============
+
+Set Next
+--------
+
+Set next place by id
+--------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#next'>
        <place>
@@ -339,12 +342,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#next'>
        <place>
@@ -352,21 +354,23 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server publishes place details to users geoloc node
 
 ...
 
-==Set next place by name==
+Set next place by name
+----------------------
 
-NOTE: A new place will never be created when setting next place. The name submitted will be treated as a one-time place, and can thus be used very informally. E.g. "Some restaurant", "New York Tomorrow", "The Pub @ 8pm" are all valid next place names
-
+NOTE: A new place will never be created when setting next place. The
+name submitted will be treated as a one-time place, and can thus be used
+very informally. E.g. "Some restaurant", "New York Tomorrow", "The Pub @
+8pm" are all valid next place names
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#next'>
        <place>
@@ -374,30 +378,30 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com' />
-</syntaxhighlight>
+~~~~
 
 Server publishes place details to users geoloc node
 
 ...
 
+Place bookmarks
+===============
 
+A user will only be auto-located to places they have previously
+bookmarked.
 
-=Place bookmarks=
-
-A user will only be auto-located to places they have previously bookmarked.
-
-==Add place to place bookmark list==
+Add place to place bookmark list
+--------------------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#add'>
        <place>
@@ -405,12 +409,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#add'>
        <place>
@@ -418,15 +421,14 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-
-==Remove place from bookmark list==
+Remove place from bookmark list
+-------------------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='set' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#remove'>
        <place>
@@ -434,12 +436,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#remove'>
        <place>
@@ -447,15 +448,14 @@ Server to client:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-
-==Get place bookmarks==
+Get place bookmarks
+-------------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#myplaces'>
        <options>
@@ -464,10 +464,9 @@ Client to server:
        </options>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns="http://buddycloud.com/protocol/place#myplaces">
        <place>
@@ -488,16 +487,17 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
+Place History
+=============
 
-=Place History=
-
-==Get place history==
+Get place history
+-----------------
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#history'>
        <options max='5' tmin='2009-03-29T00:00:00Z' tmax='2009-04-01T00:00:00Z'>
@@ -505,10 +505,9 @@ Client to server:
        </options>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='butler.buddycloud.com'>
     <query xmlns="http://buddycloud.com/protocol/place#history">
        <item sequence='0' entered='2009-03-30T13:56:05Z'>
@@ -538,19 +537,23 @@ Client to server:
        </item>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
+Place Visitors
+==============
 
-=Place Visitors=
-(currently unsupported in the current version on https://github.com/buddycloud/location-butler)
+(currently unsupported in the current version on
+<https://github.com/buddycloud/location-butler>)
 
-==People who have been here==
+People who have been here
+-------------------------
 
-People who have visited this place in the past (from place history). Should include people currently there?
+People who have visited this place in the past (from place history).
+Should include people currently there?
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#visitors' node='past'> // Or 'history'?
        <place>
@@ -558,12 +561,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='maitred.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/channels#visitors' node='past'>
        <user>
@@ -577,16 +579,16 @@ Server to client:
        </user>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
 
-
-==People who are going here==
+People who are going here
+-------------------------
 
 People who plan on visiting this place in the future (from next place).
 
 Client to server:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='get' to='butler.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/place#visitors' node='next'>
        <place>
@@ -594,12 +596,11 @@ Client to server:
        </place>
     </query>
  </iq>
-</syntaxhighlight>
-
+~~~~
 
 Server to client:
 
-<syntaxhighlight lang="xml">
+~~~~ {.xml}
 <iq type='result' from='maitred.buddycloud.com'>
     <query xmlns='http://buddycloud.com/protocol/channels#visitors' node='next'>
        <user>
@@ -607,4 +608,4 @@ Server to client:
        </user>
     </query>
  </iq>
-</syntaxhighlight>
+~~~~
